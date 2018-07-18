@@ -29,7 +29,7 @@ public class Juego extends Canvas implements Runnable {
 
     private Juego() {
         this.setPreferredSize(new Dimension(ANCHO, ALTO));
-        
+
         pantalla = new Pantalla(ANCHO, ALTO);
 
         teclado = new Teclado();
@@ -70,13 +70,13 @@ public class Juego extends Canvas implements Runnable {
     private void actualizar() {
         teclado.actualizar();
         if (teclado.arriba) {
-            System.out.println("arriba");
+            y++;
         } else if (teclado.abajo) {
-            System.out.println("abajo");
+            y--;
         } else if (teclado.izquierda) {
-            System.out.println("izquierda");
+            x++;
         } else if (teclado.derecha) {
-            System.out.println("derecha");
+            x--;
         }
 
         aps++;
@@ -97,7 +97,7 @@ public class Juego extends Canvas implements Runnable {
         Graphics grafica = estrategia.getDrawGraphics();
         grafica.drawImage(imagen, 0, 0, getWidth(), getHeight(), null);
         grafica.dispose();
-        
+
         estrategia.show();
 
         fps++;
