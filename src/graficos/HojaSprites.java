@@ -9,6 +9,10 @@ public class HojaSprites {
     private final int ancho, alto;
     public final int[] pixeles;
 
+    //Inicio sprites
+    public static HojaSprites desierto = new HojaSprites("/texturas/desierto.png", 320, 320);
+    //fin sprites
+
     public HojaSprites(final String ruta, final int ancho, final int alto) {
         this.ancho = ancho;
         this.alto = alto;

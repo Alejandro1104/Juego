@@ -1,24 +1,36 @@
 package juego;
 
 import control.Teclado;
+import graficos.Pantalla;
 import java.awt.BorderLayout;
 import java.awt.Canvas;
 import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.image.BufferStrategy;
+import java.awt.image.BufferedImage;
+import java.awt.image.DataBufferInt;
 import javax.swing.JFrame;
 
 public class Juego extends Canvas implements Runnable {
 
     private static JFrame ventana;
     private static Thread hilo;
+    private static Pantalla pantalla;
 
     private static final int ANCHO = 800, ALTO = 600;
     private static final String NOMBRE = "Juego";
     private static int aps = 0, fps = 0;
     private static volatile boolean enFuncionamiento = false;
     private static Teclado teclado;
+    private static int x = 0, y = 0;
+
+    private static BufferedImage imagen = new BufferedImage(ANCHO, ALTO, BufferedImage.TYPE_INT_RGB);
+    private static int[] pixeles = ((DataBufferInt) imagen.getRaster().getDataBuffer()).getData();
 
     private Juego() {
         this.setPreferredSize(new Dimension(ANCHO, ALTO));
+        
+        pantalla = new Pantalla(ANCHO, ALTO);
 
         teclado = new Teclado();
         this.addKeyListener(teclado);
@@ -66,11 +78,28 @@ public class Juego extends Canvas implements Runnable {
         } else if (teclado.derecha) {
             System.out.println("derecha");
         }
-        
+
         aps++;
     }
 
     private void mostrar() {
+        BufferStrategy estrategia = getBufferStrategy();
+        if (estrategia == null) {
+            createBufferStrategy(3);
+            return;
+        }
+
+        pantalla.limpiar();
+        pantalla.mostrar(x, y);
+
+        System.arraycopy(pantalla.pixeles, 0, pixeles, 0, pixeles.length);
+
+        Graphics grafica = estrategia.getDrawGraphics();
+        grafica.drawImage(imagen, 0, 0, getWidth(), getHeight(), null);
+        grafica.dispose();
+        
+        estrategia.show();
+
         fps++;
     }
 
@@ -83,7 +112,7 @@ public class Juego extends Canvas implements Runnable {
         long referenciaContador = System.nanoTime();
         double tiempoTranscurrido;
         double delta = 0;
-        
+
         this.requestFocus();
 
         while (enFuncionamiento) {
