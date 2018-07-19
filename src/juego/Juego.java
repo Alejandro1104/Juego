@@ -68,7 +68,6 @@ public class Juego extends Canvas implements Runnable {
 
     private synchronized void detener() {
         enFuncionamiento = false;
-
         try {
             hilo.join();
         } catch (InterruptedException e) {
