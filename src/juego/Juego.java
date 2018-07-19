@@ -9,6 +9,7 @@ import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 public class Juego extends Canvas implements Runnable {
@@ -38,6 +39,7 @@ public class Juego extends Canvas implements Runnable {
         ventana = new JFrame(NOMBRE);
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ventana.setResizable(false);
+        ventana.setIconImage(new ImageIcon(getClass().getResource("/icono/icon.jpg")).getImage());
         ventana.setLayout(new BorderLayout());
         ventana.add(this, BorderLayout.CENTER);
         ventana.pack();
@@ -69,7 +71,19 @@ public class Juego extends Canvas implements Runnable {
 
     private void actualizar() {
         teclado.actualizar();
-        if (teclado.arriba) {
+        if (teclado.arriba && teclado.derecha) {
+            y++;
+            x--;
+        } else if (teclado.arriba && teclado.izquierda) {
+            y++;
+            x++;
+        } else if (teclado.abajo && teclado.derecha) {
+            y--;
+            x--;
+        } else if (teclado.abajo && teclado.izquierda) {
+            y--;
+            x++;
+        } else if (teclado.arriba) {
             y++;
         } else if (teclado.abajo) {
             y--;
