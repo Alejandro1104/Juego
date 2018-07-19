@@ -33,18 +33,29 @@ public abstract class Mapa {
     }
 
     public void mostrar(int compensacionX, int compensacionY, Pantalla pantalla) {
+        pantalla.modificarDiferencia(compensacionX, compensacionY);
+
         int oeste = compensacionX >> 5,
-                este = (compensacionX + pantalla.obtenerAncho()) >> 5,
+                este = (compensacionX + pantalla.obtenerAncho() + Cuadro.LADO) >> 5,
                 norte = compensacionY >> 5,
-                sur = (compensacionY + pantalla.obtenerAlto()) >> 5;
+                sur = (compensacionY + pantalla.obtenerAlto() + Cuadro.LADO) >> 5;
+
+        for (int y = norte; y < sur; y++) {
+            for (int x = oeste; x < este; x++) {
+                obtenerCuadro(x, y).mostrar(x, y, pantalla);
+            }
+        }
     }
 
     public Cuadro obtenerCuadro(final int x, final int y) {
+        if (x < 0 || y < 0 || x >= ancho || y >= alto) {
+            return Cuadro.VACIO;
+        }
         switch (tiles[x + y * ancho]) {
             case 0:
                 return Cuadro.ASFALTO;
             default:
-                return null;
+                return Cuadro.VACIO;
         }
     }
 }
