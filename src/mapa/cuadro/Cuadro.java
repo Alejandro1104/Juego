@@ -9,6 +9,7 @@ public abstract class Cuadro {
     public Sprite sprite;
 
     //Tiles
+    public static final Cuadro VACIO = new CuadroVacio(Sprite.VACIO);
     public static final Cuadro ASFALTO = new CuadroAsfalto(Sprite.ASFALTO);
     //Fin
 

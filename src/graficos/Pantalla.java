@@ -59,4 +59,12 @@ public final class Pantalla {
             }
         }
     }
+    
+    public int obtenerAncho() {
+        return ancho;
+    }
+    
+    public int obtenerAlto() {
+        return alto;
+    }
 }
