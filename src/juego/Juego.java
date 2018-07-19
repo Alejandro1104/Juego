@@ -62,7 +62,6 @@ public class Juego extends Canvas implements Runnable {
 
     private synchronized void iniciar() {
         enFuncionamiento = true;
-
         hilo = new Thread(this, "Graficos");
         hilo.start();
     }
