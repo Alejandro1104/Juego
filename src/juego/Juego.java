@@ -13,6 +13,7 @@ import java.awt.image.DataBufferInt;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import mapa.Mapa;
+import mapa.MapaCargado;
 import mapa.MapaGenerado;
 
 public class Juego extends Canvas implements Runnable {
@@ -23,7 +24,7 @@ public class Juego extends Canvas implements Runnable {
     private static Mapa mapa;
 
     private static final int ANCHO = 800, ALTO = 600;
-    private static final String NOMBRE = "Juego";
+    private static final String NOMBRE = "Death Valley";
     private static int aps = 0, fps = 0;
     private static volatile boolean enFuncionamiento = false;
     private static Teclado teclado;
@@ -38,7 +39,9 @@ public class Juego extends Canvas implements Runnable {
         this.setPreferredSize(new Dimension(ANCHO, ALTO));
 
         pantalla = new Pantalla(ANCHO, ALTO);
-        mapa = new MapaGenerado(128, 128);
+        
+        //mapa = new MapaGenerado(128, 128);
+        mapa = new MapaCargado("/mapas/mapa1Pixeles.png");
 
         teclado = new Teclado();
         this.addKeyListener(teclado);
