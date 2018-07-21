@@ -25,7 +25,6 @@ public class HojaSprites {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     public int obtenerAncho() {
