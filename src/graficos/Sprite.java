@@ -12,6 +12,17 @@ public final class Sprite {
     //Inicio
     public static final Sprite VACIO = new Sprite(32, 0);
     public static final Sprite ASFALTO = new Sprite(32, 0, 0, HojaSprites.desierto);
+    public static final Sprite ARENA = new Sprite(32, 1, 0, HojaSprites.desierto);
+    public static final Sprite BORDE_CARRETERA_ARENA = new Sprite(32, 2, 1, HojaSprites.desierto);
+    public static final Sprite CENTRO_CARRETERA = new Sprite(32, 3, 0, HojaSprites.desierto);
+    public static final Sprite ESQUINA_CARRETERA = new Sprite(32, 4, 0, HojaSprites.desierto);
+    public static final Sprite PARED_PIEDRA = new Sprite(32, 5, 0, HojaSprites.desierto);
+    public static final Sprite BORDE_PARED_PIEDRA_ARENA = new Sprite(32, 6, 0, HojaSprites.desierto);
+    public static final Sprite PUERTA_PARTE_SUPERIOR = new Sprite(32, 7, 0, HojaSprites.desierto);
+    public static final Sprite PUERTA_PARTE_INFERIOR = new Sprite(32, 7, 1, HojaSprites.desierto);
+    public static final Sprite UNION_PARED_PIEDRA_BORDE_CARRETERA_ARENA = new Sprite(32, 8, 0, HojaSprites.desierto);
+    public static final Sprite BORDE_PARED_PIEDRA_ASFALTO = new Sprite(32, 9, 0, HojaSprites.desierto);
+    public static final Sprite GRADA_PIEDRA = new Sprite(32, 9, 1, HojaSprites.desierto);
     //Fin
 
     public Sprite(final int lado, final int columna, final int fila, final HojaSprites hoja) {

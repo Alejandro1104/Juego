@@ -54,6 +54,28 @@ public abstract class Mapa {
         switch (tiles[x + y * ancho]) {
             case 0:
                 return Cuadro.ASFALTO;
+            case 1:
+                return Cuadro.ARENA;
+            case 2:
+                return Cuadro.BORDE_CARRETERA_ARENA;
+            case 3:
+                return Cuadro.CENTRO_CARRETERA;
+            case 4:
+                return Cuadro.ESQUINA_CARRETERA;
+            case 5:
+                return Cuadro.PARED_PIEDRA;
+            case 6:
+                return Cuadro.BORDE_PARED_PIEDRA_ARENA;
+            case 7:
+                return Cuadro.PUERTA_PARTE_SUPERIOR;
+            case 8:
+                return Cuadro.PUERTA_PARTE_INFERIOR;
+            case 9:
+                return Cuadro.UNION_PARED_PIEDRA_BORDE_CARRETERA_ARENA;
+            case 10:
+                return Cuadro.BORDE_PARED_PIEDRA_ASFALTO;
+            case 11:
+                return Cuadro.GRADA_PIEDRA;
             default:
                 return Cuadro.VACIO;
         }
