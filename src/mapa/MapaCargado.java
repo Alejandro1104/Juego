@@ -67,6 +67,30 @@ public class MapaCargado extends Mapa {
                 case 0xffc1bba0:
                     catalogo[i] = Cuadro.GRADA_PIEDRA;
                     continue;
+                case 0xff6b6565:
+                    catalogo[i] = Cuadro.CENTRO_CARRETERA_GIRADO;
+                    continue;
+                case 0xff9d9191:
+                    catalogo[i] = Cuadro.BORDE_CARRETERA_ARENA_INVERTIDOX;
+                    continue;
+                case 0xffcf6060:
+                    catalogo[i] = Cuadro.BORDE_CARRETERA_ARENA_GIRADO_IZQUIERDA;
+                    continue;
+                case 0xffb17777:
+                    catalogo[i] = Cuadro.BORDE_CARRETERA_ARENA_GIRADO_DERECHA;
+                    continue;
+                case 0xffa28f4e:
+                    catalogo[i] = Cuadro.UNION_PARED_PIEDRA_BORDE_CARRETERA_ARENA_INVERTIDOX;
+                    continue;
+                case 0xff572727:
+                    catalogo[i] = Cuadro.ESQUINA_CARRETERA_INVERTIDOX;
+                    continue;
+                case 0xff5c0000:
+                    catalogo[i] = Cuadro.ESQUINA_CARRETERA_INVERTIDOY;
+                    continue;
+                case 0xff571414:
+                    catalogo[i] = Cuadro.ESQUINA_CARRETERA_INVERTIDOXY;
+                    continue;
                 default:
                     catalogo[i] = Cuadro.VACIO;
             }

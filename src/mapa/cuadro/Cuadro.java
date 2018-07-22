@@ -24,6 +24,14 @@ public class Cuadro {
     public static final Cuadro UNION_PARED_PIEDRA_BORDE_CARRETERA_ARENA = new Cuadro(Sprite.UNION_PARED_PIEDRA_BORDE_CARRETERA_ARENA);
     public static final Cuadro BORDE_PARED_PIEDRA_ASFALTO = new Cuadro(Sprite.BORDE_PARED_PIEDRA_ASFALTO);
     public static final Cuadro GRADA_PIEDRA = new Cuadro(Sprite.GRADA_PIEDRA);
+    public static final Cuadro CENTRO_CARRETERA_GIRADO = new Cuadro(Sprite.CENTRO_CARRETERA_GIRADO);
+    public static final Cuadro BORDE_CARRETERA_ARENA_INVERTIDOX = new Cuadro(Sprite.BORDE_CARRETERA_ARENA_INVERTIDOX);
+    public static final Cuadro BORDE_CARRETERA_ARENA_GIRADO_IZQUIERDA = new Cuadro(Sprite.BORDE_CARRETERA_ARENA_GIRADO_IZQUIERDA);
+    public static final Cuadro BORDE_CARRETERA_ARENA_GIRADO_DERECHA = new Cuadro(Sprite.BORDE_CARRETERA_ARENA_GIRADO_DERECHA);
+    public static final Cuadro UNION_PARED_PIEDRA_BORDE_CARRETERA_ARENA_INVERTIDOX = new Cuadro(Sprite.UNION_PARED_PIEDRA_BORDE_CARRETERA_ARENA_INVERTIDOX);
+    public static final Cuadro ESQUINA_CARRETERA_INVERTIDOX = new Cuadro(Sprite.ESQUINA_CARRETERA_INVERTIDOX);
+    public static final Cuadro ESQUINA_CARRETERA_INVERTIDOY = new Cuadro(Sprite.ESQUINA_CARRETERA_INVERTIDOY);
+    public static final Cuadro ESQUINA_CARRETERA_INVERTIDOXY = new Cuadro(Sprite.ESQUINA_CARRETERA_INVERTIDOXY);
     //Fin
 
     public Cuadro(Sprite sprite) {
