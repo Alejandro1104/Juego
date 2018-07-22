@@ -10,6 +10,7 @@ public final class Sprite {
     private HojaSprites hoja;
 
     //Inicio
+    //Desierto
     public static final Sprite VACIO = new Sprite(32, 0);
     public static final Sprite ASFALTO = new Sprite(32, 0, 0, 0, HojaSprites.desierto);
     public static final Sprite ARENA = new Sprite(32, 1, 0, 0, HojaSprites.desierto);
@@ -31,8 +32,27 @@ public final class Sprite {
     public static final Sprite ESQUINA_CARRETERA_INVERTIDOX = new Sprite(32, 4, 0, 1, HojaSprites.desierto);
     public static final Sprite ESQUINA_CARRETERA_INVERTIDOY = new Sprite(32, 4, 0, 2, HojaSprites.desierto);
     public static final Sprite ESQUINA_CARRETERA_INVERTIDOXY = new Sprite(32, 4, 0, 3, HojaSprites.desierto);
-    //Fin
+    //Fin desierto
 
+    //Jugador
+    public static final Sprite ABAJO0 = new Sprite(32, 0, 0, 0, HojaSprites.jugador);
+    public static final Sprite ABAJO1 = new Sprite(32, 0, 1, 0, HojaSprites.jugador);
+    public static final Sprite ABAJO2 = new Sprite(32, 0, 2, 0, HojaSprites.jugador);
+
+    public static final Sprite ARRIBA0 = new Sprite(32, 1, 0, 0, HojaSprites.jugador);
+    public static final Sprite ARRIBA1 = new Sprite(32, 1, 1, 0, HojaSprites.jugador);
+    public static final Sprite ARRIBA2 = new Sprite(32, 1, 2, 0, HojaSprites.jugador);
+
+    public static final Sprite DERECHA0 = new Sprite(32, 2, 0, 0, HojaSprites.jugador);
+    public static final Sprite DERECHA1 = new Sprite(32, 2, 1, 0, HojaSprites.jugador);
+    public static final Sprite DERECHA2 = new Sprite(32, 2, 2, 0, HojaSprites.jugador);
+
+    public static final Sprite IZQUIERDA0 = new Sprite(32, 3, 0, 0, HojaSprites.jugador);
+    public static final Sprite IZQUIERDA1 = new Sprite(32, 3, 1, 0, HojaSprites.jugador);
+    public static final Sprite IZQUIERDA2 = new Sprite(32, 3, 2, 0, HojaSprites.jugador);
+    //Fin jugador
+
+    //Fin
     public Sprite(final int lado, final int columna, final int fila, final int version, final HojaSprites hoja) {
         this.lado = lado;
         pixeles = new int[lado * lado];

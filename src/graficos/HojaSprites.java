@@ -11,6 +11,7 @@ public class HojaSprites {
 
     //Inicio sprites
     public static HojaSprites desierto = new HojaSprites("/texturas/desierto.png", 320, 320);
+    public static HojaSprites jugador = new HojaSprites("/texturas/jugador.png", 128, 96);
     //fin sprites
 
     public HojaSprites(final String ruta, final int ancho, final int alto) {

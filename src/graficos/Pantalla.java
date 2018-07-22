@@ -1,11 +1,12 @@
 package graficos;
 
+import entes.criaturas.Jugador;
 import mapa.cuadro.Cuadro;
 
 public final class Pantalla {
 
     private final int ancho, alto;
-    
+
     private int diferenciaX, diferenciaY;
 
     public final int[] pixeles;
@@ -26,7 +27,7 @@ public final class Pantalla {
     public void mostrarCuadro(int compensacionX, int compensacionY, Cuadro cuadro) {
         compensacionX -= diferenciaX;
         compensacionY -= diferenciaY;
-        
+
         for (int y = 0; y < cuadro.sprite.obtenerLado(); y++) {
             int posicionY = y + compensacionY;
 
@@ -42,16 +43,40 @@ public final class Pantalla {
             }
         }
     }
-    
+
+    public void mostrarJugador(int compensacionX, int compensacionY, Jugador jugador) {
+        compensacionX -= diferenciaX;
+        compensacionY -= diferenciaY;
+
+        for (int y = 0; y < jugador.obtenerSprite().obtenerLado(); y++) {
+            int posicionY = y + compensacionY;
+
+            for (int x = 0; x < jugador.obtenerSprite().obtenerLado(); x++) {
+                int posicionX = x + compensacionX;
+                if (posicionX < -jugador.obtenerSprite().obtenerLado() || posicionX >= ancho || posicionY < 0 || posicionY >= alto) {
+                    break;
+                }
+                if (posicionX < 0) {
+                    posicionX = 0;
+                }
+
+                int colorPixelJugador = jugador.obtenerSprite().pixeles[x + y * jugador.obtenerSprite().obtenerLado()];
+                if (colorPixelJugador != 0xff0cff00) {
+                    pixeles[posicionX + posicionY * ancho] = colorPixelJugador;
+                }
+            }
+        }
+    }
+
     public void modificarDiferencia(final int diferenciaX, final int diferenciaY) {
         this.diferenciaX = diferenciaX;
         this.diferenciaY = diferenciaY;
     }
-    
+
     public int obtenerAncho() {
         return ancho;
     }
-    
+
     public int obtenerAlto() {
         return alto;
     }
