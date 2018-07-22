@@ -47,16 +47,16 @@ public abstract class Criatura extends Ente {
         int posicionX = x + desplazamientoX;
         int posicionY = y + desplazamientoY;
 
-        int margenIzquierdo =  -22;
-        int margenDerecho = 1;
+        int margenIzquierdo = -8;
+        int margenDerecho = 8;
 
-        int margenSuperior = 1;
-        int margenInferior = 10;
+        int margenSuperior = -1;
+        int margenInferior = 18;
 
         int bordeIzquierdo = (posicionX + margenDerecho) / sprite.obtenerLado();
-        int bordeDerecho = (posicionX + margenIzquierdo) / sprite.obtenerLado();
+        int bordeDerecho = (posicionX + margenDerecho + margenIzquierdo) / sprite.obtenerLado();
         int bordeSuperior = (posicionY + margenInferior) / sprite.obtenerLado();
-        int bordeInferior = (posicionY + margenSuperior) / sprite.obtenerLado();
+        int bordeInferior = (posicionY + margenInferior + margenSuperior) / sprite.obtenerLado();
 
         if (mapa.obtenerCatalago(bordeIzquierdo + bordeSuperior * mapa.obtenerAncho()).esSolido()) {
             colision = true;

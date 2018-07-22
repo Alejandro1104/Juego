@@ -11,7 +11,7 @@ public final class Sprite {
 
     //Inicio
     //Desierto
-    public static final Sprite VACIO = new Sprite(32, 0);
+    public static final Sprite VACIO = new Sprite(32, 0x000000);
     public static final Sprite ASFALTO = new Sprite(32, 0, 0, 0, HojaSprites.desierto);
     public static final Sprite ARENA = new Sprite(32, 1, 0, 0, HojaSprites.desierto);
     public static final Sprite BORDE_CARRETERA_ARENA = new Sprite(32, 2, 1, 0, HojaSprites.desierto);
