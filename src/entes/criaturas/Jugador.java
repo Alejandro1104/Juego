@@ -3,26 +3,31 @@ package entes.criaturas;
 import control.Teclado;
 import graficos.Pantalla;
 import graficos.Sprite;
+import mapa.Mapa;
 
 public class Jugador extends Criatura {
 
     private Teclado teclado;
     private int animacion;
 
-    public Jugador(Teclado teclado, Sprite sprite) {
+    public Jugador(Mapa mapa, Teclado teclado, Sprite sprite) {
         this.teclado = teclado;
         this.sprite = sprite;
+        this.mapa = mapa;
     }
 
-    public Jugador(Teclado teclado, int posicionX, int posicionY, Sprite sprite) {
+    public Jugador(Mapa mapa, Teclado teclado, int posicionX, int posicionY, Sprite sprite) {
         this.teclado = teclado;
         this.x = posicionX;
         this.y = posicionY;
         this.sprite = sprite;
+        this.mapa = mapa;
     }
 
     public void actualizar() {
         int desplazamientoX = 0, desplazamientoY = 0;
+
+        int velocidadMovimiento = 1;
 
         if (animacion < 32767) {
             animacion++;
@@ -30,17 +35,21 @@ public class Jugador extends Criatura {
             animacion = 0;
         }
 
+        if (teclado.correr) {
+            velocidadMovimiento = 2;
+        }
+
         if (teclado.arriba) {
-            desplazamientoY--;
+            desplazamientoY -= velocidadMovimiento;
         }
         if (teclado.abajo) {
-            desplazamientoY++;
+            desplazamientoY += velocidadMovimiento;
         }
         if (teclado.izquierda) {
-            desplazamientoX--;
+            desplazamientoX -= velocidadMovimiento;
         }
         if (teclado.derecha) {
-            desplazamientoX++;
+            desplazamientoX += velocidadMovimiento;
         }
 
         if (desplazamientoX != 0 || desplazamientoY != 0) {

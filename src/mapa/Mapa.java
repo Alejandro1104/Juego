@@ -44,7 +44,6 @@ public abstract class Mapa {
 
         for (int y = norte; y < sur; y++) {
             for (int x = oeste; x < este; x++) {
-                //obtenerCuadro(x, y).mostrar(x, y, pantalla);
                 if (x < 0 || y < 0 || x >= ancho || y >= alto) {
                     Cuadro.VACIO.mostrar(x, y, pantalla);
                 } else {
@@ -86,5 +85,13 @@ public abstract class Mapa {
             default:
                 return Cuadro.VACIO;
         }
+    }
+
+    public Cuadro obtenerCatalago(int posicion) {
+        return catalogo[posicion];
+    }
+
+    public int obtenerAncho() {
+        return ancho;
     }
 }
